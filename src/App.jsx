@@ -10,13 +10,13 @@ function App() {
     const [ubicacion, setUbicacion] = useState({ lat: null, lng: null });
 
     const buscarImagenes = () => {
-        axios.get(`http://localhost:5000/api/imagenes/${keyword}`)
+        axios.get(`/api/imagenes/${keyword}`)
             .then(response => setImagenes(response.data.results))
             .catch(error => console.error('Error en el frontend:', error));
     };
 
     const obtenerClima = () => {
-        axios.get(`http://localhost:5000/api/clima/${ciudad}`)
+        axios.get(`/api/clima/${ciudad}`)
             .then(response => setClima(response.data))
             .catch(error => console.error("Error al obtener el clima:", error));
     };
